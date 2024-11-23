@@ -14,6 +14,8 @@
 # limitations under the License.
 
 set -euo pipefail
+install  $(which kustomize) ${INSTALL_DIR}
+exit 0
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "${REPO_ROOT}"
