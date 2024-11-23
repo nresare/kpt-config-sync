@@ -95,7 +95,7 @@ spec:
       - name: otel-collector
         image: OTELCONTRIBCOL_IMAGE_NAME
         command:
-        - /otelcontribcol
+        - /otelcol-contrib
         args:
         - "--config=/conf/otel-collector-config.yaml"
         # The prometheus transformer appends `_ratio` to gauge metrics: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.86.0/pkg/translator/prometheus/normalize_name.go#L149

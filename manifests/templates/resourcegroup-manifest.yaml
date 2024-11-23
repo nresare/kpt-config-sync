@@ -233,7 +233,7 @@ spec:
         - --config=/conf/otel-agent-config.yaml
         - --feature-gates=-pkg.translator.prometheus.NormalizeName
         command:
-        - /otelcontribcol
+        - /otelcol-contrib
         env:
         - name: KUBE_POD_NAME
           valueFrom:
