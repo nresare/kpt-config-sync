@@ -86,10 +86,9 @@ HELM_STAGING_DIR := $(OUTPUT_DIR)/third_party/helm
 COSIGN_VERSION := v2.4.1
 COSIGN := $(BIN_DIR)/cosign
 
-GIT_SYNC_VERSION := v4.3.0-gke.9__linux_amd64
-GIT_SYNC_IMAGE_NAME := gcr.io/config-management-release/git-sync:$(GIT_SYNC_VERSION)
+GIT_SYNC_VERSION := v4.3.0
+GIT_SYNC_IMAGE_NAME := nresare/git-sync:$(GIT_SYNC_VERSION)
 
-=======
 OTELCONTRIBCOL_VERSION := 0.103.0
 OTELCONTRIBCOL_IMAGE_NAME := otel/opentelemetry-collector-contrib:$(OTELCONTRIBCOL_VERSION)
 
