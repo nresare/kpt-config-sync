@@ -1,0 +1,11 @@
+For more user facing details: https://noa.re/posts/configsync-on-arm64/
+
+This document contains the detils on how to build a new release of config-sync for 
+multiple architectures. I have ran these on my Ubuntu 24.04 arm64 box with the 
+docker snap installed.
+
+1. Cherry-pick the top commits from here https://github.com/nresare/kpt-config-sync/commits/v1.20.2-multi_arch/
+3. Create a local a buildx container with `docker buildx create --bootstrap --use --driver docker-container` 
+4. Verify that you can build the images with `DOCKER_BUILD_QUIET="" REGISTRY=repo_to_publish_to make build-images` (note that even when we are not publishing, REGISTRY will need to be set to something
+5. publish the container images with `DOCKER_BUILD_QUIET="--push" REGISTRY=repo_to_publish_to make build-images`. Yes I know that it is hacky, the DOCKER_BUILD_QUIET variable just happens to be a mechanism that can be used to add arbitrary arguments to docker buildx
+6. Build the manifest files with `REGISTRY=repo_to_publis_to make build-manifests-oss`
